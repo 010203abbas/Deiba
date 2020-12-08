@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "Desktop";
+}
+
+<h2 style="text-align:right;margin-right:100px;margin-top:100px;color: forestgreen">Desktop & Gaming</h2>
+
+
+<!-- Features section end -->
+<!-- letest product section -->
+<!-- letest product section end -->
+<!-- Product filter section -->
+<section class="product-filter-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>جستجوی کالاها</h2>
+        </div>
+        <ul class="product-filter-menu" style="text-align:right">
+            <li>
+                <a asp-action="Desktop" asp-controller="Pages"><h9>Desktop</h9></a>
+            </li>
+
+
+
+            <li><a asp-action="Dell" asp-controller="Pages"><h9>Dell</h9></a></li>
+            <li><a asp-action="Hp" asp-controller="Pages"><h9>HP</h9></a></li>
+            <li><a asp-action="Samsung" asp-controller="Pages"><h9>Samsung</h9></a></li>
+            <li><a asp-action="MicroSoft" asp-controller="Pages"><h9>microsoft</h9></a></li>
+            <li><a asp-action="MSI" asp-controller="Pages"><h9>MSI</h9></a></li>
+            <li><a asp-action="Lenovo" asp-controller="Pages"><h9>Lenovo</h9></a></li>
+            <li><a asp-action="Asus" asp-controller="Pages"><h9>Asus</h9></a></li>
+            <li><a asp-action="Apple" asp-controller="Pages"><h9>Apple</h9></a></li>
+
+        </ul>
+
+        <div class="row">
+            @foreach (var item in ViewData["tst"] as List<Product>)
+            {
+                <div class="col-lg-3 col-sm-6">
+                    <div class="product-item">
+                        <div class="pi-pic">
+                            <img style="width:300px;height:300px" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.Img)}")" alt="">
+                            <div class="pi-links">
+                                <a href="#" class="add-card"><i class="flaticon-bag"></i><span>اضافه به سبد خرید</span></a>
+                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                            </div>
+                        </div>
+                        <div class="pi-text">
+                            <h6>@item.Price</h6>
+                            <p>@item.Name </p>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+
+
+
+
+
+        <div class="text-center pt-5">
+            <button class="site-btn sb-line sb-dark" style="font-family:Tahoma">نمایش بیشتر</button>
+        </div>
+    </div>
+</section>
+<!-- Product filter section end -->
+<!-- Banner section -->

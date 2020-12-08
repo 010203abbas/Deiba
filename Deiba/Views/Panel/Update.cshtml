@@ -1,0 +1,97 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1 style="text-align:center;margin-top:100px">ویرایش</h1>
+
+<section class="contact-section">
+    <div class="container" style="margin-top:60px">
+        <div class="row">
+            <div class="col-md-4">
+
+                <div>
+                    <form enctype="multipart/form-data" method="post" asp-action="Updateconfirm" asp-controller="Panel" asp-route-Id="@Model.Id">
+                        <div class="form-group">
+                            <label>نام کالا</label>
+                            <input class="form-control" asp-for="Name">
+                        </div>
+                        <div class="form-group">
+                            <label>مدل</label>
+                            <input class="form-control" asp-for="Mod">
+                        </div>
+
+                        <div class="form-group">
+                            <label>قیمت</label>
+                            <input class="form-control" asp-for="Price">
+                        </div>
+
+                        <div class="form-group">
+                            <label>توضیحات</label>
+                            <textarea class="form-control" aria-label="With textarea" asp-for="Title"></textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">عکس کالا</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" asp-for="Img">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" asp-for="Barandid">
+                                @foreach (var item in ViewData["Barands"] as List<Barand>)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+
+                                }
+
+                            </select>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary ">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="container" style="margin-top:100px;margin-bottom:200px">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table">
+                            <thead>
+                                <tr style="background-color:mediumspringgreen">
+                                    <th scope="col">#</th>
+                                    <th scope="col">نام</th>
+                                    <th scope="col">مدل</th>
+                                    <th scope="col">توضیحات</th>
+                                    <th scope="col">قیمت</th>
+                                    <th scope="col">عکس</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                                    <tr>
+
+                                        <th scope="row">@Model.Id</th>
+                                        <td>@Model.Name</td>
+                                        <td>@Model.Mod</td>
+                                        <td>@Model.Title</td>
+                                        <td>@Model.Price</td>
+                                        <td><img style="width:200px;height:100px" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(Model.Img)}")" alt="Laptop"></td>
+                                        
+                                    </tr>
+
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</section>
+

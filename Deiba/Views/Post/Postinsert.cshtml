@@ -1,0 +1,46 @@
+﻿@model PostViewModel
+
+@{
+    ViewData["Title"] = "Postinsert";
+}
+
+<h1 style="text-align:center;margin-top:50px">نظرات</h1>
+<section >
+    <div class="container" style="text-align:right">
+        <div class="row" >
+            @foreach (var item in ViewData["p"] as List<Post>)
+            {
+
+
+                <div class="col-md-6 col-xl-12">
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">@item.Name</h4>
+                        <p style="font-size:20px">@item.Title</p>
+
+
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+
+
+    <div class="container" style="margin-bottom:100px;direction:rtl">
+        <div class="row">
+            <div class="col-md-6 col-xl-12">
+                <form class="contact-form" asp-action="Postconfirm" asp-controller="Post">
+                    <input type="text" placeholder="نام" asp-for="Name" style="font-size:20px">
+                    <textarea placeholder="پیام" asp-for="Title" style="font-size:20px"></textarea>
+                    <button class="site-btn">ارسال</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+

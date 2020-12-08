@@ -1,0 +1,139 @@
+﻿<!-- Features section end -->
+<!-- letest product section -->
+
+
+
+
+<section class="top-letest-product-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>جدیدترین محصولات</h2>
+        </div>
+        <div class="product-slider owl-carousel">
+            <div class="product-item">
+                <div class="pi-pic">
+                    <img src="~/Layout/img/slider/1.jpg" alt="">
+
+                </div>
+                <div class="pi-text">
+                    <h6>$3000,000</h6>
+                    <p>Mi 10T 5G </p>
+                </div>
+            </div>
+
+
+
+            <!------------------------------------------------------------------>
+            <div class="product-item">
+                <div class="pi-pic">
+                    <div class="tag-new">جدید</div>
+                    <img src="~/Layout/img/slider/2.jpg" alt="">
+
+                </div>
+                <div class="pi-text">
+                    <h6>$2000,000</h6>
+                    <p>A93</p>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="pi-pic">
+                    <img src="~/Layout/img/slider/3.jpg" alt="">
+
+                </div>
+                <div class="pi-text">
+                    <h6>$35,000,000</h6>
+                    <p>iphone12 </p>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="pi-pic">
+                    <img src="~/Layout/img/slider/4.jpg" alt="">
+
+                </div>
+                <div class="pi-text">
+                    <h6>$4000,000</h6>
+                    <p>mate 40 pro </p>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="pi-pic">
+                    <img src="~/Layout/img/slider/5.jpg" alt="">
+
+                </div>
+                <div class="pi-text">
+                    <h6>$550,000,0</h6>
+                    <p>Tablet </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- letest product section end -->
+<!-- Product filter section -->
+<section class="product-filter-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>جستجوی کالاها</h2>
+        </div>
+        <ul class="product-filter-menu" style="text-align:right">
+            <li>
+                <a asp-action="Desktop" asp-controller="Pages"><h9>Desktop</h9></a>
+            </li>
+            <li><a asp-action="Dell" asp-controller="Pages"><h11>Dell</h11></a></li>
+            <li><a asp-action="HP" asp-controller="Pages"><h11>HP</h11></a></li>
+            <li><a asp-action="Samsung" asp-controller="Pages"><h11>Samsung</h11></a></li>
+            <li><a asp-action="MicroSoft" asp-controller="Pages"><h11>microsoft</h11></a></li>
+            <li><a asp-action="MSI" asp-controller="Pages"><h11>MSI</h11></a></li>
+            <li><a asp-action="Lenovo" asp-controller="Pages"><h11>Lenovo</h11></a></li>
+            <li><a asp-action="Asus" asp-controller="Pages"><h11>Asus</h11></a></li>
+            <li><a asp-action="Apple" asp-controller="Pages"><h11>Apple</h11></a></li>
+
+        </ul>
+
+
+
+
+        <div class="row">
+            @foreach (var item in ViewData["tst"] as List<Product>)
+            {
+                <div class="col-lg-3 col-sm-6">
+                    <div class="product-item">
+                        <div class="pi-pic">
+                            <img style="width:300px;height:300px" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.Img)}")" alt="Laptop">
+                            <div class="pi-links">
+                                <a href="#" class="add-card"><i class="flaticon-bag"></i><span>اضافه به سبد خرید</span></a>
+                                <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                            </div>
+                        </div>
+                        <div class="pi-text">
+                            <h6>@item.Price</h6>
+                            <p>@item.Name </p>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+
+        <br />
+        <nav aria-label="..." style="margin-left:30%">
+            <ul class="pagination">
+               
+                @for (int i = 1; i < (ViewBag.Pagecount+1); i++)
+                {
+                    <li class="@(((int)ViewBag.PageId==i)?"page-item active":"") "><a class="page-link" href="/Home/Index?Pageid=@i">@i</a></li>
+
+                }
+
+
+               
+            </ul>
+        </nav>
+
+
+
+    </div>
+</section>
+<!-- Product filter section end -->
+<!-- Banner section -->

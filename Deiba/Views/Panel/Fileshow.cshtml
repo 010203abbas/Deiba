@@ -1,0 +1,37 @@
+﻿@model List<File>
+@{
+    ViewData["Title"] = "Fileshow";
+}
+
+<h1 style="text-align:center;margin-top:20px;color:cadetblue">لیست قیمت ها</h1>
+<div class="container" style="margin-bottom:30px;margin-top:30px">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card" style="background-color: lavender">
+                <div class="card-body">
+                    <h5 class="card-title">مشاهده لیست قیمت های لپتاپ</h5>
+                    <p class="card-text">آخرین لیست قیمت های لپتاپ در سایت دیبا ببینید</p>
+                    <a href="~/Layout/Filespdf/laptop/dahan-dandan.pdf" class="btn btn-primary">مشاهده</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card" style="background-color:aquamarine">
+                <div class="card-body">
+                    <h5 class="card-title">مشاهده لیست قیمت های گوشی</h5>
+                    <p class="card-text">آخرین لیست قیمت های گوشی در سایت دیبا ببینید</p>
+                    <a href="~/Layout/Filespdf/mobile/dahan-dandan.pdf" class="btn btn-primary">مشاهده</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card" style="background-color:burlywood;margin-top:20px">
+                <div class="card-body">
+                    <h5 class="card-title">مشاهده لیست قیمت های کامپیوتر</h5>
+                    <p class="card-text">آخرین لیست قیمت های کامپیوتر در سایت دیبا ببینید</p>
+                    <a href="~/Layout/Filespdf/desktop/dahan-dandan.pdf" class="btn btn-primary">مشاهده</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

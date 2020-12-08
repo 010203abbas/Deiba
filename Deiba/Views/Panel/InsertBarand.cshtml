@@ -1,0 +1,27 @@
+﻿@model BarandViewModel
+@{
+    ViewData["Title"] = "InsertBarand";
+}
+<div class="container" style="width:500px;height:500px">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Barandconfirm" asp-controller="Panel">
+                <div class="form-row align-items-center">
+
+                    <div class="col-auto">
+                        <label>برند کالا</label>
+                        <input type="text" class="form-control " asp-for="Name">
+
+                    </div>
+
+                    <div class="col-auto" style="margin-top:40px">
+                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                    </div>
+
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,409 @@
+﻿
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Diba System</title>
+    <meta charset="UTF-8">
+    <meta name="description" content=" Divisima | eCommerce Template">
+    <meta name="keywords" content="divisima, eCommerce, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="~/Layout/img/icons/download.png" rel="shortcut icon" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/Layout/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Layout/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/Layout/css/flaticon.css" />
+    <link rel="stylesheet" href="~/Layout/css/slicknav.min.css" />
+    <link rel="stylesheet" href="~/Layout/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="~/Layout/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="~/Layout/css/animate.css" />
+    <link rel="stylesheet" href="~/Layout/css/style.css" />
+
+
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body style="font-family:'Microsoft New Tai Lue'">
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader" ></div>
+    </div>
+
+    <!-- Header section -->
+    <header class="header-section">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 text-center text-lg-left">
+                        <!-- logo -->
+                        <a href="./index.html" class="site-logo">
+                            <img src="~/Layout/img/icons/download.png" alt="" style="width:1000px">
+                        </a>
+                    </div>
+                    <div class="col-xl-6 col-lg-5">
+                        <form class="header-search-form">
+                            <input type="text" style="direction:rtl;font-family:Tahoma" placeholder="جستجو...">
+
+                        </form> 
+                    </div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="user-panel">
+                            <div class="up-item">
+                                <i class="flaticon-profile"></i>
+                                @if (User.Identity.IsAuthenticated == true)
+                                {
+                                    <a asp-action="Signout" asp-controller="Account" style="font-size:20px;margin-right:20px">خروج</a>
+
+                                }
+                                else
+                                { 
+                                    <a asp-action="Login" asp-controller="Account" style="font-size:20px">ورود</a>
+
+                                }
+
+
+
+                                <a asp-action="Register" asp-controller="Account" style="font-size:20px;margin-right:40px; ">ثبت نام </a>
+                            </div>
+                            <div class="up-item">
+                                <div class="shopping-card">
+                                    <i class="flaticon-bag"></i>
+                                    <span>0</span>
+                                </div>
+                                <a href="#" style="font-size:20px">سبد خرید</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="main-navbar" style="font-family:'B Titr'" >
+            <div class="container" style="text-align:right">
+                <!-- menu -->
+                <ul class="main-menu" style="direction:rtl">
+
+                    <li><a asp-action="Index" asp-controller="Home">صفحه اصلی</a></li>
+                    <li>
+                        <a href="#">لپ تاپ</a>
+                        <ul class="sub-menu">
+                            <li><a asp-action="Apple" asp-controller="Pages">Apple</a></li>
+                            <li><a asp-action="Asus" asp-controller="Pages">Asus</a></li>
+                            <li><a asp-action="Samsung" asp-controller="Pages">Samsung</a></li>
+
+                            <li><a asp-action="Hp" asp-controller="Pages">Hp</a></li>
+                            <li><a asp-action="Dell" asp-controller="Pages">Dell</a></li>
+                            <li><a asp-action="Lenovo" asp-controller="Pages">Lenovo</a></li>
+                            <li><a asp-action="MSI" asp-controller="Pages">MSI</a></li>
+                            <li><a asp-action="Fileshow" asp-controller="Panel">لیست قیمت های لپتاپ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">کامپیوتر</a>
+                        <ul class="sub-menu">
+                            <li><a asp-action="Allinone" asp-controller="Pages">All in one</a></li>
+                            <li><a asp-action="Desktop" asp-controller="Pages">کیس </a></li>
+                            <li><a asp-action="Fileshow" asp-controller="Panel">لیست قیمت های کامپیوتر </a></li>
+
+                            <!---- <li><a href="#">مینی کیس</a></li>
+    <li><a href="#">مانیتور</a></li>
+    <li><a href="#">موبایل</a></li>
+    <li><a href="#">هارد</a></li>
+    <li><a href="#">رم</a></li>
+    <li><a href="#">گرافیک</a></li>-->
+                        </ul>
+                    </li>
+                    <!--  <li>
+        <a href="#">شبکه</a>
+        <ul class="sub-menu">
+            <li><a href="./product.html">میکروتیک</a></li>
+
+        </ul>
+    </li>-->
+        <li>
+          <a href="#">موبایل</a>
+          <ul class="sub-menu">
+              
+              <li><a asp-action="Fileshow" asp-controller="Panel">لیست قیمت های گوشی</a></li>
+
+          </ul>
+      </li>
+                    
+                    <li><a asp-action="Janebi" asp-controller="Pages" >لوازم جانبی</a></li>
+
+                    <li><a asp-action="Postinsert" asp-controller="Post">پست ها</a></li>
+                    <li><a href="#">درباره ما</a></li>
+                  
+                    <li>
+                        <a asp-action="PanelManager" asp-controller="Panel">پنل مدیریت</a>
+                    </li>
+
+                    <li style="margin-right:100px">
+                        <h6 style="color:white">@(User.Identity.IsAuthenticated==true?User.Identity.Name:"کاربر مهمان")</h6>
+                    </li>
+
+                </ul>
+
+
+
+            </div>
+        </nav>
+    </header>
+    <!-- Header section end -->
+                            <!--size image for slider= 1920*720 -->
+                            <section class="hero-section">
+                                <div class="hero-slider owl-carousel">
+                                    <div class="hs-item set-bg" data-setbg="@Url.Content("~/Layout/img/slider/1.jpg")">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-7 text-white">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="hs-item set-bg" data-setbg="@Url.Content("~/Layout/img/slider/2.jpg")">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-7 text-white">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="hs-item set-bg" data-setbg="@Url.Content("~/Layout/img/slider/3.jpg")">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-7 text-white">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="hs-item set-bg" data-setbg="@Url.Content("~/Layout/img/slider/4.jpg")">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-7 text-white">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="hs-item set-bg" data-setbg="@Url.Content("~/Layout/img/slider/5.jpg")">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-7 text-white">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="hs-item set-bg" data-setbg="@Url.Content("~/Layout/img/slider/6.jpg")">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-7 text-white">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="hs-item set-bg" data-setbg="@Url.Content("~/Layout/img/slider/7.jpg")">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-7 text-white">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="slide-num-holder" id="snh-1"></div>
+                                </div>
+                            </section>
+                            <!-- Hero section end -->
+                            <!-- Features section -->
+                            <section class="features-section">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-4 p-0 feature">
+                                            <div class="feature-inner">
+                                                <div class="feature-icon">
+                                                    <img src="~/Layout/img/icons/1.png" alt="#">
+                                                </div>
+                                                <h2><a href="#" style="color:black">پرداخت سریع و امن</a></h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 p-0 feature">
+                                            <div class="feature-inner">
+                                                <div class="feature-icon">
+                                                    <img src="~/Layout/img/icons/2.png" alt="#">
+                                                </div>
+                                                <h2><a href="#"style="color:black">فروش ویژه</a></h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 p-0 feature">
+                                            <div class="feature-inner">
+                                                <div class="feature-icon">
+                                                    <img src="~/Layout/img/icons/3.png" alt="#">
+                                                </div>
+                                                <h2><a href=""style="color:black">پاسخ گویی سریع</a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            @RenderBody()
+
+                            <!------------------------------------------------------------------------------------------------------------------------------------------->
+                            <!-------------------------------------------------------------------------------------------------------------------------------------------->
+                            <!-- Banner section end  -->
+                            <!-- Footer section -->
+                            <section class="footer-section" style="font-family:Tahoma">
+                                <div class="container">
+                                    <div class="footer-logo text-center">
+                                        <a href="index.html"><img src="~/Layout/img/icons/download.png" alt="" style="width:150px"></a>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="footer-widget about-widget">
+                                                <h2>درباره ما</h2>
+                                                <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam frin-gilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
+                                                <img src="~/Layout/img/cards.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="footer-widget about-widget">
+                                                <h2>لینک ها</h2>
+                                                <ul>
+                                                    <li><a asp-action="Apple" asp-controller="Pages">Apple</a></li>
+                                                    <li><a asp-action="Asus" asp-controller="Pages">Asus</a></li>
+                                                    <li><a asp-action="Dell" asp-controller="Pages">Dell</a></li>
+                                                    <li><a asp-action="Lenovo" asp-controller="Pages">Lenovo</a></li>
+                                                    <li><a asp-action="Microsoft" asp-controller="Pages">Microsoft</a></li>
+                                                    <li><a asp-action="Samsung" asp-controller="Pages">Ssmsung</a></li>
+                                                </ul>
+                                                <ul>
+                                                    <li><a asp-action="MSI" asp-controller="Pages">MSI</a></li>
+                                                    <li><a asp-action="Hp" asp-controller="Pages">Hp</a></li>
+                                                    <li><a asp-action="Desktop" asp-controller="Pages">Desktop</a></li>
+                                                    <li><a asp-action="Postinsert" asp-controller="Post">نظرات</a></li>
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-5 col-sm-6">
+                                            <div class="footer-widget contact-widget">
+                                                <h2>تماس با ما</h2>
+                                                <div class="con-info">
+                                                    <span>تلفن</span>
+                                                    <p>091736474522 </p>
+                                                    <p>091736474588 </p>
+
+                                                </div>
+                                                <div class="con-info">
+                                                    <span>موبایل</span>
+                                                    <p>09170048445 </p>
+                                                    
+                                                </div>
+                                                <div class="con-info">
+                                                    <span>ادرس:</span>
+                                                    <p>شیراز-خیابان ملاصدرا-کوچه2-مرکز کامپیوتر پارس-طبقه پنجم واحد 509</p>
+                                                </div>
+                                                <div class="con-info">
+                                                    <span>Gmail</span>
+                                                    <p>dibacomputer36474522@gmail.com</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="social-links-warp">
+                                    <div class="container">
+                                        <div class="social-links">
+                                            <a href="" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a>
+                                            <a href="" class="telegram"><i class="fa fa-telegram"></i><span>telegram</span></a>
+                                            <a href="" class="pinterest"><i class="fa fa-whatsapp"></i><span>whatsapp</span></a>
+                                            <a href="" class="facebook"><i class="fa fa-facebook"></i><span>facebook</span></a>
+                                            <a href="" class="twitter"><i class="fa fa-twitter"></i><span>twitter</span></a>
+                                            <a href="" class="youtube"><i class="fa fa-youtube"></i><span>youtube</span></a>
+                                            
+                                        </div>
+
+                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                        <p class="text-white text-center mt-5" >
+                                            Copyright &copy;
+                                            <script>document.write(new Date().getFullYear());</script> All rights reserved | طراح سایت :مهندس عباسر بردبار موبایل:09226857206
+                                        </p>
+                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Footer section end -->
+                            <!--====== Javascripts & Jquery ======-->
+                            <script src="~/Layout/js/jquery-3.2.1.min.js"></script>
+                            <script src="~/Layout/js/bootstrap.min.js"></script>
+                            <script src="~/Layout/js/jquery.slicknav.min.js"></script>
+                            <script src="~/Layout/js/owl.carousel.min.js"></script>
+                            <script src="~/Layout/js/jquery.nicescroll.min.js"></script>
+                            <script src="~/Layout/js/jquery.zoom.min.js"></script>
+                            <script src="~/Layout/js/jquery-ui.min.js"></script>
+                            <script src="~/Layout/js/main.js"></script>
+
+
+                            @if (TempData["msg"] != null)
+                            {
+                                <div class="modal fade" id="div1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="background-color:antiquewhite">
+                                                <h3>پیام سیستمی</h3>
+                                            </div>
+                                            <div class="modal-body">
+                                                @TempData["msg"]
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button class="btn btn-warning" data-dismiss="modal">بستن</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    $(() => {
+                                        $(div1).modal()
+                                    })
+
+                                </script>
+                            }
+
+</body>
+</html>
+
+
+
+
+
+            
+
+

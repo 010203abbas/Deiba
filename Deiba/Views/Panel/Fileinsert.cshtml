@@ -1,0 +1,27 @@
+﻿@model FileViewModel
+@{
+    ViewData["Title"] = "Fileinsert";
+}
+
+<h1>Fileinsert</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" enctype="multipart/form-data" asp-action="Fileconfirm" asp-controller="Panel">
+                <div class="form-group">
+                    <input class="form-control" asp-for="Name" />
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">لیست لپتاپ</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" asp-for="Listlaptop">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">لیست موبایل</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" asp-for="Listmobile">
+                </div>
+                <button class="btn btn-primary">send</button>
+            </form>
+        </div>
+    </div>
+</div>
